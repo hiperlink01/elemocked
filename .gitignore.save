@@ -1,0 +1,5 @@
+nment_and_notes/
+*.exe
+*.o
+*.txt
+*.pdf
