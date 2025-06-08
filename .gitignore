@@ -2,6 +2,7 @@
 assignment_and_notes/
 *.txt
 *.pdf
+*.vscode
 
 # Prerequisites
 *.d

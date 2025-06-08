@@ -1,10 +1,14 @@
 #ifndef GAME_H
 #define GAME_H
 
-typedef struct game GAME;
-typedef struct player Player;
+typedef struct game Game; //must store game time (INCLUDE TIME LIB)
 
-GAME* Game_Create();
-Player* Player_Create();
+typedef enum {
+    MAP_A,
+    MAP_B
+} game_map_select;
+
+Game* Game_Init(game_map_select game_map);
+void Game_Finish(Game* game);
 
 #endif

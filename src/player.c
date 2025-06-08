@@ -14,7 +14,7 @@
 #include "../include/ingame/object.h"
 #include "../../include/ingame/coordinates.h"
 
-typedef struct game {
-    game_map_select game_map;
-    int time;
-} Game;
+typedef struct player {
+    char nome[10];
+    Game * game;
+} Player;
