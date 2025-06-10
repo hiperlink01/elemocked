@@ -1,11 +1,9 @@
 #ifndef MAP_H
 #define MAP_H
 
-#include <stdio.h>
-
 typedef struct map Map;
 
-Map* Map_Load(char select);
+Map* Map_Load(game_map_select selected_map, Gui* GUI);
 void Map_Unload(Map* map);
 
 void Map_Dimension(Map* map);
