@@ -1,7 +1,6 @@
 #include "../include/utils.h"
 
 #include "../include/bool.h"
-#include "../include/gui.h"
 #include "../include/ranking.h"
 #include "../include/player.h"
 #include "../include/game.h"
@@ -40,13 +39,10 @@ Player* Player_Start(){
 
 int main() {
 
-   // Gui* GUI = Gui_Load();
-
     char start_or_quit;
 
     do {
 
-//        Gui_Print(GUI, START_MENU);
         printf("\n\nELEMOCKED\n\n[S] Start [Q] Quit\n\n>>");
         start_or_quit = fgetc(stdin); clear_input_stream();
         Gui_Clear();
@@ -77,7 +73,7 @@ int main() {
         bool failed = FALSE;
 
         //START TIMER HERE OR INSIDE THE FUNCTION
-
+        int timer = 0;
         Player_Set_Timer(player, timer);
 
         do { New_Turn(hero, map); }
@@ -154,4 +150,5 @@ int main() {
 
     return 0 ;
     
+    }
 }

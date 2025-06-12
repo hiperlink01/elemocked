@@ -5,7 +5,7 @@
 
 #include "../../include/utils.h"
 #include "../../include/bool.h"
-#include "../../include/gui.h"
+ 
 #include "../../include/ranking.h"
 #include "../../include/player.h"
 #include "../../include/game.h"
