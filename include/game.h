@@ -3,7 +3,6 @@
 
 #include "player.h"
 
-
 //for Game struct
 
 typedef enum {
@@ -28,8 +27,6 @@ void Game_Set_Map(Game* game, game_map_select game_map);
 
 Player* Game_Get_Player(Game* game);
 game_map_select Game_Get_Map(Game* game);
-
-// game_map_select Game_Map_Select(Gui* GUI);
 
 // game_map_select Game_Get_Map(Game* new_game);
 
