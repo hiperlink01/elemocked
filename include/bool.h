@@ -5,6 +5,14 @@
 #define NOT !
 #endif
 
+#ifndef AND
+#define AND &&
+#endif
+
+#ifndef OR
+#define OR ||
+#endif
+
 #ifndef IS
 #define IS ==
 #endif

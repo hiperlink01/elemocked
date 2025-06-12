@@ -2,8 +2,12 @@
 #define POSITION_H
 
 typedef struct coordinates {
-    int i, j;
-} Coordinates, Dimensions;
+    int x, y;
+} Coordinates;
+
+typedef struct dimensions {
+    int width, height;
+} Dimensions;
 
 typedef enum {
     UP = 'W',

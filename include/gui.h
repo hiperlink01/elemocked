@@ -1,37 +1,67 @@
 #ifndef GUI_H
 #define GUI_H
 
-typedef struct gui Gui;
+// typedef struct gui Gui;
 
-typedef char ** window;
+// typedef char ** graphical_element;
 
-typedef enum {
-    START_MENU,
-    PLAYER_MENU,
-    MAP_MENU,
+// typedef enum {
+//     START_MENU,
+//     PLAYER_MENU,
+//     MAP_MENU,
     
-    HUD,
+//     MAP_A,
+//     MAP_B,
     
-    YOU_WIN,
-    YOU_LOSE,
+//     HEALTH,
+//     WEAPON,
+//     POTION,
     
-    RANKING,
+//     YOU_WIN,
+//     YOU_LOSE,
     
-    PLAY_AGAIN,
-    QUIT,
-    HELP,
+//     RANKING,
+    
+//     PLAY_AGAIN,
+//     QUIT,
+//     HELP,
 
-    EXIT,
+//     EXIT,
+    
+//     graphical_elements_qtt
+// } graphical_element_type;
 
-    window_qtt
-} window_type, window_quantity;
+// char path_arr[graphical_elements_qtt][64] =
+// {    
+//     "../assets/menu/start_menu.txt",
+//     "../assets/menu/player_menu.txt",
+//     "../assets/menu/map_menu.txt",
 
-Gui* Gui_Load();
-void Gui_Unload(Gui* Gui);
+//     "../assets/maps/map_a.txt",
+//     "../assets/maps/map_b.txt",
 
-void Gui_Update(Gui* Gui);
+//     "../assets/hud/health.txt",
+//     "../assets/hud/weapon.txt",
+//     "../assets/hud/potion.txt",
 
-void Gui_Print(Gui* GUI, window_type to_print);
+//     "../assets/menu/you_win.txt",
+//     "../assets/menu/you_lose.txt",
+
+//     "../assets/ranking.bin",
+
+//     "../assets/menu/play_again.txt",
+//     "../assets/menu/quit.txt",
+//     "../assets/menu/help.txt",
+
+//     "../assets/menu/exit.txt",  
+// };
+
+// Gui* Gui_Load();
+// void Gui_Unload(Gui* Gui);
+
+// void Gui_Update(Gui* Gui);
+
+// void Gui_Print(Gui* GUI, graphical_element_type to_print);
 
 void Gui_Clear();
 

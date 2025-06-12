@@ -16,43 +16,39 @@
 #include "../include/ingame/object.h"
 #include "../include/ingame/coordinates.h"
 
-typedef struct Gui {
-    window * window;
-    window_type window_type;
-    Dimensions Gui_size;
-} Gui;
+// typedef struct Gui {
+//     graphical_element * graphical_element;
+//     Dimensions dimensions;
+// } Gui;
 
-Gui* Gui_Load(){
-    
-    Gui* new = (Gui*)malloc(sizeof(Gui));
+// Gui* Gui_Load(){
 
-    new->window = (window*)malloc(sizeof(window)*window_qtt);
+//     Gui* GUI = (Gui*)malloc(sizeof(Gui));
 
-    for (int i = 0; i < window_qtt; i++){
+//     GUI->graphical_element = (graphical_element*)malloc(sizeof(graphical_element)*graphical_elements_qtt);
+
+//     for (graphical_element_type graphical_element_i = START_MENU; graphical_element_i < graphical_elements_qtt; graphical_element_i++){
         
-        switch (i) {
-        case START_MENU:
-            /* code */
-            break;
+//         if (
+//             graphical_element_i ISNT MAP_A
+//             AND graphical_element_i ISNT HUD //potion, health, weapon
+//             AND graphical_element_i ISNT YOU_WIN
+//             AND graphical_element_i ISNT YOU_LOSE
+//             AND graphical_element_i ISNT RANKING
+//         ){
+//             Gui_Graphical_Element_Load(GUI, graphical_element_i);
+//         }
+//     }
 
-        case PLAYER_MENU:
-        case MAP_MENU:case HUD:
-        case YOU_WIN:case YOU_LOSE:
-        case RANKING:case PLAY_AGAIN:
-        case QUIT:case HELP:
-        
-        default:
-            break;
-        }
+// }
 
+// void Gui_Graphical_Element_Load(Gui* GUI, graphical_element_type element){
 
-    }
+//     FILE* to_load = fopen(path_arr[element], "r");
 
-}
+// };
 
-void Gui_Unload(Gui* GUI){}
-
-void Gui_Clear() {
+void Gui_Clear(){
 
     printf("\e[1;1H\e[2J");
     

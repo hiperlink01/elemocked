@@ -16,21 +16,31 @@
 #include "../include/ingame/object.h"
 #include "../include/ingame/coordinates.h"
 
+//for Game struct
+
 typedef struct game {
     Player* player;
     game_map_select game_map;
 } Game;
 
-Game* Game_Init(Player* player, game_map_select game_map){
+//alloccers
 
+Game* Game_Alloc(){
     Game* new_game = (Game*)malloc(sizeof(Game));
-
-    new_game->player = player;
-    new_game->game_map = game_map;
-
     return new_game;
-
 }
+void Game_Free();
 
-game_map_select Game_Get_Map(Game* new_game)
-{ return new_game->game_map; }
+//setters
+
+void Game_Set_Player(Game* game, Player* player)
+{ game->player = player; }
+void Game_Set_Map(Game* game, game_map_select game_map)
+{ game->game_map = game_map; }
+
+//getters
+
+Player* Game_Get_Player(Game* game)
+{ return game->player; }
+game_map_select Game_Get_Map(Game* game)
+{ return game->game_map; }

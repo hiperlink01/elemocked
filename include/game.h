@@ -1,19 +1,36 @@
 #ifndef GAME_H
 #define GAME_H
 
-typedef struct game Game; //must store game time (INCLUDE TIME LIB)
+#include "player.h"
+
+
+//for Game struct
 
 typedef enum {
-    MAP_A,
-    MAP_B,
+    A,
+    B,
     map_qtt
 } game_map_select;
 
-Game* Game_Init();
-void Game_Finish(Game* game);
+typedef struct game Game; //must store game time (INCLUDE TIME LIB)
 
-game_map_select Game_Map_Select(Gui* GUI);
+//alloccers
 
-game_map_select Game_Get_Map(Game* new_game);
+Game* Game_Alloc();
+void Game_Free(Game* game);
+
+//setters
+
+void Game_Set_Player(Game* game, Player* player);
+void Game_Set_Map(Game* game, game_map_select game_map);
+
+//getters
+
+Player* Game_Get_Player(Game* game);
+game_map_select Game_Get_Map(Game* game);
+
+// game_map_select Game_Map_Select(Gui* GUI);
+
+// game_map_select Game_Get_Map(Game* new_game);
 
 #endif

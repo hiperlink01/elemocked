@@ -17,40 +17,77 @@
 #include "../../include/ingame/object.h"
 #include "../../include/ingame/coordinates.h"
 
+//for Map struct
+
 typedef struct map {
-    Dimensions size;
+    Dimensions dimensions;
     char** graphical;
     Block** * functional;
-    Coordinates position_of_hero;
+    Coordinates hero_position;
 } Map;
 
-Map* Map_Load(game_map_select selected_map){
+//alloccers
 
-    if (selected_map == MAP_A){
-        //fopen map a, do all the stuff, return pointer
-    }
-    if (selected_map == MAP_B){
-        //fopen map a, do all the stuff, return pointer
-    }
+Map* Map_Alloc(){ 
+    
+    Map* new = (Map*)malloc(sizeof(Map));
+
+    return new;
 
 }
 
-void Map_Unload(Map* map) {
-    
-    for (int i = 0; i < map->size.i; i++){
-        free(map->graphical[i]);
-    }
-    free(map->graphical);
+void Map_Free(Map* map) { };
 
-};
+Load_Map(Map* map, game_map_select game_map){
 
-void Map_Dimension(Map* map);
+    FILE* f_map;
 
-char** Map_Alloc(Map* map);
-void Map_Free(Map* map);
+    if(game_map = A)
+    { f_map = fopen("../../assets/maps/map_b.txt", "r"); }
+    if(game_map = B)
+    { f_map = fopen("../../assets/maps/map_b.txt", "r"); }
+      
+    int width = 0, height = 0;
 
-void Map_Fill(Map* map);
+    while (fgetc(f_map) != '\n' && !(feof(f_map)))
+    { width++; }
 
-void Map_Update(Map* map);
+    fseek(f_map, 0, SEEK_SET);
+
+    char* buff = (char*)malloc(sizeof(char)*width+1);
+
+    while(fgets(buff, width+2, f_map))
+    { height++; }
+
+    fclose(f_map);
+
+    map->dimensions.height = height;
+    map->dimensions.width = width;
+
+}
+
+//setters
+
+void Map_Set_Dimensions(Map* map, Dimensions dimensions)
+{ map->dimensions = dimensions; }
+void Map_Set_Graphical(Map* map, char** graphical)
+{ map->graphical = graphical; }
+void Map_Set_Functional(Map* map, Block** * functional)
+{ map->functional = functional; }
+void Map_Set_Hero_Position(Map* map, Coordinates hero_position)
+{ map->hero_position = hero_position; }
+
+//getters
+
+Dimensions Map_Get_Dimenstions(Map* map)
+{ return map->dimensions; }
+char** Map_Get_Graphical(Map* map)
+{ return map->graphical; }
+Block** * Map_Get_Functional(Map* map)
+{ return map->functional; }
+Coordinates Map_Get_Hero_Position(Map* map)
+{ return map->hero_position; }
+
+//actions
 
 void Map_Print(Map* map);

@@ -16,6 +16,32 @@
 #include "../include/ingame/object.h"
 #include "../include/ingame/coordinates.h"
 
+//for Ranking struct
+
 typedef struct ranking {
-    Player * top_players[3];
+    Player* * top_players;
 } Ranking;
+
+//alloccers
+
+Ranking* Ranking_Alloc(){
+    Ranking* ranking = (Ranking*)malloc(sizeof(Ranking));
+    return ranking;
+}
+
+void Ranking_Free(Ranking* ranking)
+{ free(ranking); }
+
+//setters
+
+void Ranking_Set_Top_Players(Ranking* ranking, Player* * top_players)
+{ ranking->top_players = top_players; }
+
+//getters
+
+Player** Ranking_Get_Top_Players(Ranking* ranking)
+{ return ranking->top_players; }
+
+//actions
+
+void Ranking_Update_File();

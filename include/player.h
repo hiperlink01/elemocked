@@ -1,26 +1,23 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
+//for Player struct
+
 typedef struct player Player; //name has 10 characters
 
-typedef enum {
+//alloccers
 
-    MOVE_UP = 'W', 
-    MOVE_LEFT = 'A',
-    MOVE_DOWN = 'S',
-    MOVE_RIGHT = 'D',
+Player* Player_Alloc();
+void Player_Free(Player* player);
 
-    OPEN_CHEST = 'E',
+//for name value
 
-    ATTACK = 'K',
-    CHANGE_WEAPON = 'O',
-    DRINK_POTION = 'P'
-    
-} player_action;
+void Player_Set_Name(Player* player, char* name);
+char* Player_Get_Name(Player* player);
 
-Player * Player_Start(Gui* GUI);
-void Player_Quit(Player * player);
+//for game_time value
 
-
+void Player_Set_Timer(Player* player, int timer);
+int Player_Get_Timer(Player* player);
 
 #endif
